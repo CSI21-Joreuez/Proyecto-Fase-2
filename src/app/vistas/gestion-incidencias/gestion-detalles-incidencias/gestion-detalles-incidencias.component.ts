@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
-  selector: 'app-detalles-incidencias',
-  templateUrl: './detalles-incidencias.component.html',
-  styleUrls: ['./detalles-incidencias.component.css']
+  selector: 'app-gestion-detalles-incidencias',
+  templateUrl: './gestion-detalles-incidencias.component.html',
+  styleUrls: ['./gestion-detalles-incidencias.component.css']
 })
-export class DetallesIncidenciasComponent implements OnInit {
+export class GestionDetallesIncidenciasComponent implements OnInit {
+
   coleccion = 'incidencias';
   formIncidencia = this.fb.group({
     descripcion: ['', Validators.required],
@@ -35,9 +36,9 @@ export class DetallesIncidenciasComponent implements OnInit {
     this.documentId = this.ruta.snapshot.paramMap.get('id')!;
     this.incidencia = this.formIncidencia.value;
     if(this.formIncidencia.valid)
-    this.fire.update(this.coleccion,this.documentId,this.incidencia).then(() => {alert("Revision Actualizada")});
+    this.fire.update(this.coleccion,this.documentId,this.incidencia).then(() => {alert("Estado Actualizada")});
     else{
-      alert("No se ha podido actuliazar el campo Revision")
+      alert("No se ha podido actuliazar el campo Estado")
     };
     
   }

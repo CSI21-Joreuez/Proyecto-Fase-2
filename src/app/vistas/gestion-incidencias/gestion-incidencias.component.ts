@@ -3,16 +3,15 @@ import { ActivatedRoute } from '@angular/router';
 import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
-  selector: 'app-incidencias',
-  templateUrl: './incidencias.component.html',
-  styleUrls: ['./incidencias.component.css']
+  selector: 'app-gestion-incidencias',
+  templateUrl: './gestion-incidencias.component.html',
+  styleUrls: ['./gestion-incidencias.component.css']
 })
-export class IncidenciasComponent implements OnInit {
+export class GestionIncidenciasComponent implements OnInit {
   documentId: string = '';
   coleccion = 'incidencias';
   incidencia: any[] = [];
   displayedColumns: string[] = ['Descripcion','Lugar', 'Estado', 'Solucion', 'Revision'];
-
   constructor( private firebase: ServicesService,private  ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -25,12 +24,9 @@ export class IncidenciasComponent implements OnInit {
             {
               documentId: snap.payload.doc.id,
               ...snap.payload.doc.data()
-              
             }
           )
         });
   })}
-  
 
-  
 }

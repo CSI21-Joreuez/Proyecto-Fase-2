@@ -1,4 +1,4 @@
-  <div class="form-body">
+<div class="form-body">
     <div class="row">
         <div class="form-holder">
             <div class="form-content">
@@ -25,15 +25,18 @@
                     </div>
                     <div class="col-md-12">
                         <h4 for="estadoIncidencias">Estado Incidencias:</h4>
-                            <input type="text" formControlName="estadoIncidencias" id="estadoIncidencias" class="formControl" readonly>
+                        <select class="form-select mt-3" name="estadoIncidencias" id="estadoIncidencias" formControlName="estadoIncidencias" >
+                            <option value=Leida>Leida</option>
+                            <option value=Asignada>Asignada</option>
+                            <option value=Comenzada>Comenzada</option>
+                            <option value=Terminada>Terminada</option>
+                     </select>
                 </div>
 
                        <div class="col-md-12">
                         <h4 for="revisionIncidencia">Revision Incidencia:</h4>
-                            <select class="form-select mt-3" name="revisionIncidencia" id="revisionIncidencia" formControlName="revisionIncidencia" required >
-                                  <option value=true>Revisada</option>
-                                  <option value=false>No Revisada</option>
-                           </select>
+                        <input type="text" formControlName="revisionIncidencia" id="revisionIncidencia" class="formControl" readonly>
+
                        </div>
                         <div class="form-button mt-3">
                             <app-volver></app-volver>
